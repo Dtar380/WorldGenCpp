@@ -5,10 +5,8 @@
 file(GLOB_RECURSE TEST_SOURCES "${CMAKE_CURRENT_SOURCE_DIR}/*.cpp")
 
 if(TEST_SOURCES)
-  find_package(GTest REQUIRED)
-
   add_executable(worldgen_tests ${TEST_SOURCES})
-  target_link_libraries(worldgen_tests PRIVATE worldgen GTest::GTest GTest::Main)
+  target_link_libraries(worldgen_tests PRIVATE worldgen GTest::gtest GTest::gtest_main)
   target_compile_features(worldgen_tests PRIVATE cxx_std_20)
 
   add_test(NAME worldgen_tests COMMAND worldgen_tests)
