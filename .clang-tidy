@@ -1,0 +1,21 @@
+---
+Checks: >
+  clang-diagnostic-*,
+  clang-analyzer-*,
+  modernize-*,
+  performance-*,
+  readability-*,
+  bugprone-*,
+  -readability-identifier-length,
+  -readability-magic-numbers,
+  -modernize-use-trailing-return-type,
+  -altera-unroll-loops
+WarningsAsErrors: '*'
+HeaderFilterRegex: '.*'
+AnalyzeTemporaryDtors: false
+FormatStyle: file
+CheckOptions:
+  readability-function-cognitive-complexity.Threshold: 50
+  readability-uppercase-literal-suffix.IgnoreIntegerSuffix: false
+  readability-uppercase-literal-suffix.IgnoreFloatSuffix: false
+...
